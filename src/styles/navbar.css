@@ -1,0 +1,64 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    z-index: 1;
+    width: 100%;
+    border-bottom: greenyellow 2px solid;
+}
+
+.navbar--sticky {
+    position: fixed;
+    background-color: white;
+    border-bottom: greenyellow 2px solid;
+    /* top: 0;
+    left: 0; */
+    animation: moveDown 0.5s ease-in-out;
+}
+
+.navbar__logo-holder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 4rem;
+}
+
+.navbar__logo {
+    height: 2.5rem;
+    margin-right: 0.5rem;
+    animation: rotate 0.7s ease-in-out 0.5s;
+}
+
+.navbar__list {
+    display: flex;
+    gap: 4rem;
+    list-style: none;    
+}
+
+.navbar__item {
+    cursor: pointer;
+}
+
+.push-right {
+    margin-left: auto;
+    padding-right: 4rem;
+}
+
+@keyframes moveDown {
+    from {
+        transform: translateY(-5rem);
+    }
+
+    to {
+        transform: translateY(0rem);
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotateY(360deg);
+    }
+
+    100% {
+        transform: rotateY(0rem);
+    }
+}
