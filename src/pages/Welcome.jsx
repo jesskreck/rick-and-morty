@@ -8,10 +8,12 @@ const Welcome = ({ element }) => {
   return (
     <main>
       <section className="welcome">
-        <div ref={element}>
+        <div className="container" ref={element}>
           <img src={Logo} alt="logo" className="welcome__logo" />
-          <p>Even if you scroll, I will stick with you</p>
-          <button className="welcome__btn">Check out the characters</button>
+          <div className="container--narrow">
+            <p>Scroll down or click on the button to get to the character's gallery.</p>
+            <a href="#characterSection" className="button-30" id="btnCharacterSection">Check out the characters</a>
+          </div>
         </div>
       </section>
     </main>

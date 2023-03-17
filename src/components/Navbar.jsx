@@ -6,14 +6,18 @@ const Navbar = ({sticky}) => (
   <nav className={sticky
       ? "navbar navbar--sticky"
       : "navbar"}>
-    <div className="navbar__logo-holder">{sticky
-        ? <img src={Logo} alt="logo" className="navbar__logo" />
+    <div className="navbar__logo-holder">
+      {sticky
+        ? (
+          <>
+          <img src={Logo} alt="logo" className="navbar__logo" />
+          <p className="text--hg">Characters</p></>
+        )
         : null}
-      <h1>Characters</h1>
     </div>
     <ul className="navbar__list push-right">
       <li className="navbar__item">Home</li>
-      <li className="navbar__item">About</li>
+      <li className="navbar__item">Gallery</li>
       <li className="navbar__item">Blog</li>
     </ul>
   </nav>

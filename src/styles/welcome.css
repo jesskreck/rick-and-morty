@@ -10,19 +10,48 @@
     text-align: center;
     color: white;
     font-size: larger;
+    font-family: "JetBrains Mono", monospace;
+}
+
+.welcome p {
+    text-shadow: 2px 3px 3px rgba(0, 0, 0, 0.3);
 }
 
 .welcome__logo {
     width: 40rem;
 }
 
-.welcome__btn {
-    background: #e74c3c;
-    border: white 1px solid;
-    color: #fff;
-    margin-top: 1rem;
-    padding: 0.7rem 1.5rem;
-    border-radius: 20px;
-    font-weight: 700;
-    font-size: x-large;
+.container--narrow {
+    width: 50%;
+    margin: 0 auto;
 }
+
+.button-30 {
+    background-color: #FCFCFD;
+    border-radius: 4px;
+    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+    color: #36395A;
+    cursor: pointer;
+    display: block;
+    font-family: "JetBrains Mono", monospace;
+    padding: 0.3rem 5rem;
+    text-decoration: none;
+}
+
+.button-30:focus {
+    box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+}
+
+.button-30:hover {
+    box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+    transform: translateY(-2px);
+}
+
+.button-30:active {
+    box-shadow: #D6D6E7 0 3px 7px inset;
+    transform: translateY(2px);
+}
+
+
+
+

@@ -1,8 +1,11 @@
 import React from "react"
 import useSticky from "./hooks/useSticky.jsx"
-import Welcome from "./components/Welcome"
+import Welcome from "./pages/Welcome"
 import Navbar from "./components/Navbar"
-import Characters from "./components/Characters"
+import CharacterGallery from "./pages/CharacterGallery"
+import RandomFiller from "./pages/RandomFiller.jsx"
+import Pagination from "./components/Pagination.jsx"
+
 
 function App() {
   const { isSticky, element } = useSticky()
@@ -10,7 +13,7 @@ function App() {
     <>
       <Navbar sticky={isSticky} />
       <Welcome element={element} />
-      <Characters />
+      <CharacterGallery />
     </>
   )
 }

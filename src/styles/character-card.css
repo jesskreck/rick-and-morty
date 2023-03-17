@@ -1,0 +1,130 @@
+
+.card {
+    transform-style: preserve-3d;
+    display: flex;
+    position: relative;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+    border-radius: 20px;
+    font-family: "JetBrains Mono", monospace;
+
+    /* defines turning animation */
+    transition: 1.5s ease-in-out;
+
+    /* because the front/back/side elements need to have position absolute, only real element to define height would be card__image*/
+    /* debug: setting height of card with JS to height of side (which is height of front/back plus margin */
+    height: auto;
+}
+
+.card:hover {
+    /* magic part 3: turning card around */
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+
+.card h1{
+    color: white;
+    text-shadow: 2px 3px 3px rgba(0, 0, 0, 0.3);
+}
+
+.card p{
+    color: white;
+    text-shadow: 2px 3px 3px rgba(0, 0, 0, 0.3);
+    font-size: larger;
+}
+
+.side {
+    position: absolute;
+    align-content: center;
+
+    /* 3D magic happening in .content > transform. This attribute preserves it only */
+    transform-style: preserve-3d;
+
+    /* since side is applied 2 times (for both sides) the following makes sure the smaller one is 100% of the size of the bigger one (check with borders)*/
+    width: 100%;
+    height: 100%;
+}
+
+.content {
+    /* actual 3D magic happening here! */
+    transform: translatez(50px) scale(0.9);
+
+    text-align: center;
+    height: auto;
+}
+
+.content h1 {
+    padding-bottom: 1rem;
+    border-bottom: yellowgreen 4px solid;
+}
+
+.content h3 {
+    color: white;
+    border-bottom: yellowgreen 2px solid;
+    padding-bottom: 2px;
+    margin: 0;
+}
+
+.content p{
+    padding-top: 1px;
+    padding-bottom: 1rem;
+    margin: 0;
+}
+
+.front {
+    /* for future recycling: if cards should look identical, delete card__image and set BG image here */
+    /* in this project: only contains a dark alpha filter to make text better readable */
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.back {
+    /* magic part 2: displaying content on the back correctly */
+    transform: rotateY(180deg);
+}
+
+.card__image{
+    border-radius: 20px;
+    
+    /* always as big as card. cover makes image fit whole div while cutting it if necessary. margin auto centers cut image*/
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin: auto;
+}
+
+.status{
+    padding: 1rem;
+}
+
+.Alive{
+    margin-top: 0.75rem;
+    margin-bottom: 1.5rem;
+    height: 4rem;
+    background-image: url(../assets/images/icon_Alive.png);    
+    background-size: contain;
+    background-repeat: no-repeat;
+    filter: drop-shadow(2px 3px 3px rgba(0, 0, 0, 0.3));
+    background-position: center;
+}
+
+.Dead{
+    margin-top: 0.75rem;
+    margin-bottom: 1.5rem;
+    height: 4rem;
+    background-image: url(../assets/images/icon_Dead.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: drop-shadow(2px 3px 3px rgba(0, 0, 0, 0.3));
+}
+
+.unknown {
+    margin-top: 0.75rem;
+    margin-bottom: 1.5rem;
+    height: 4rem;
+    background-image: url(../assets/images/icon_Unknown.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: drop-shadow(2px 3px 3px rgba(0, 0, 0, 0.3));
+}

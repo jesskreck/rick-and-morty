@@ -1,0 +1,4 @@
+.button__holder{
+    display: flex;
+    justify-content: space-around;
+}
