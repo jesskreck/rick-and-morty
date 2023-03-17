@@ -33,9 +33,9 @@ function CharacterGallery() {
   };
 
   useEffect(() => {
-    console.log("i run");
     asyncFetch();
-  }, [pageNumber]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <>
