@@ -13,6 +13,8 @@ const Welcome = ({ element }) => {
           <div className="container--narrow">
             <p>Scroll down or click on the button to get to the character's gallery.</p>
             <a href="#characterSection" className="button-30" id="btnCharacterSection">Check out the characters</a>
+            <a href="#imageGenerator" className="button-30" id="btnImageGenerator">Jump to Image Generator</a>
+
           </div>
         </div>
       </section>

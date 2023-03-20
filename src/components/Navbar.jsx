@@ -18,7 +18,7 @@ const Navbar = ({sticky}) => (
     <ul className="navbar__list push-right">
       <li className="navbar__item">Home</li>
       <li className="navbar__item">Gallery</li>
-      <li className="navbar__item">Blog</li>
+      <li className="navbar__item">Image Generator</li>
     </ul>
   </nav>
 )

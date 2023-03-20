@@ -11,8 +11,10 @@ function CharacterGallery() {
   const [characters, setCharacters] = useState([]);
   const [error, setError] = useState(null);
 
-  let url = `https://rickandmortyapi.com/api/character/?page=${pageNumber}`;
+  
 
+
+  let url = `https://rickandmortyapi.com/api/character/?page=${pageNumber}`;
   ///////// OLD FETCH FOR COMPARISON
   // const getData = () => {
   //   fetch(url)
@@ -20,6 +22,8 @@ function CharacterGallery() {
   //     .then(result => setCharacters(result.results))
   //     .catch(error => setError(error.message))
   // }
+
+  
 
   const asyncFetch = async () => {
     try {
@@ -34,6 +38,7 @@ function CharacterGallery() {
 
   useEffect(() => {
     asyncFetch();
+    // QUICK FIX when useEffect is not working when deployed:
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pageNumber]);
 

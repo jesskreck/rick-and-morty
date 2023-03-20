@@ -1,25 +1,42 @@
-import React, { useLayoutEffect, useRef } from 'react';
+import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import "../styles/character-card.css"
 import episodeCounter from "../utils/episodeCounter"
+import searchMinHeight from "../utils/searchMinHeight"
 
 
 function CharacterCard({ characterData }) {
 
   const cardRef = useRef(null);
   const contentRef = useRef(null);
-
+  
   useLayoutEffect(() => {
     cardRef.current.style.height = `${contentRef.current.offsetHeight}px`;
 
-  }, [cardRef, contentRef]);
+  }, [cardRef, contentRef]
+  );
+
+
+// // useEffect is going against the idea of useRef - useRef should normally being overwritten when rendering. With this useEffect we're storing it
+//   useEffect(() => {
+//     cardRef.current.style.height = `${contentRef.current.offsetHeight}px`;
+//     cardRef.current.style.height = `${searchMinHeight( cardRef.current.style.height)}px`;
+    
+//    // console.log('contentRef.current.offsetHeight :>> ', contentRef.current.offsetHeight);
+//     //console.log('cardRef.current.offsetHeight :>> ', cardRef.current.offsetHeight);
+    
+//     checkHeight(cardRef.current.offsetHeight)
+    
+
+//   }, []);
 
 
   return (
-    <div className="card" ref={cardRef}>
+    <article className="card" ref={cardRef}>
       <img className="card__image" src={characterData.image} alt={`hot profile pic of ${characterData.name}`} />
       <div className="front side" >
         <div className="content" ref={contentRef}>
           <h1>{characterData.name}</h1>
+          <p>lorem20</p>
           <p>{characterData.name} is a {characterData.species}. Originally coming from: {characterData.origin.name}.
             Played in {episodeCounter(characterData.episode)} episodes.
           </p>
@@ -48,7 +65,7 @@ function CharacterCard({ characterData }) {
 
         </div>
       </div>
-    </div>
+    </article>
 
 
 
